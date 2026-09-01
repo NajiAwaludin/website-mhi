@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event | SMK Mulia Hati Insani</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f8fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+        header {
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo-text h2 {
+            color: #0d6efd;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #0d6efd;
+        }
+
+        .btn-login {
+            padding: 9px 18px;
+            border-radius: 25px;
+            background: #0d6efd;
+            color: white !important;
+        }
+
+        .btn-login:hover {
+            background: #0956c7;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+        .hero {
+            min-height: 420px;
+            background:
+                linear-gradient(rgba(0, 51, 120, 0.78), rgba(0, 91, 190, 0.78)),
+                url("https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=80")
+                center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content span {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #0d6efd;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #172b4d;
+            margin: 7px 0;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* =========================
+           EVENT CARD
+        ========================= */
+        .event-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.35s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .event-image {
+            height: 210px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .event-card:hover .event-image img {
+            transform: scale(1.08);
+        }
+
+        .event-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #0d6efd;
+            color: white;
+            border-radius: 10px;
+            padding: 8px 12px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .event-date strong {
+            display: block;
+            font-size: 20px;
+        }
+
+        .event-date small {
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .event-content {
+            padding: 22px;
+        }
+
+        .event-content .category {
+            color: #0d6efd;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .event-content h3 {
+            font-size: 19px;
+            color: #172b4d;
+            margin: 8px 0;
+        }
+
+        .event-content p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 18px;
+        }
+
+        .event-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .event-info i {
+            color: #0d6efd;
+            font-size: 17px;
+        }
+
+        .detail-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #0d6efd;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .detail-btn:hover {
+            gap: 9px;
+        }
+
+        /* =========================
+           EVENT BESAR
+        ========================= */
+        .featured-event {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #0d6efd, #0046a8);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            overflow: hidden;
+        }
+
+        .featured-event img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .featured-content span {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .featured-content h2 {
+            font-size: 30px;
+            margin: 10px 0 15px;
+        }
+
+        .featured-content p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .featured-btn {
+            display: inline-block;
+            padding: 11px 22px;
+            background: white;
+            color: #0d6efd;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        footer {
+            background: #10233f;
+            color: white;
+            padding: 50px 30px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            color: #b8c4d4;
+            font-size: 13px;
+            max-width: 400px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+            color: #b8c4d4;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #9eacbd;
+            font-size: 12px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 900px) {
+            .nav-menu {
+                gap: 12px;
+            }
+
+            .event-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-event {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .section {
+                padding: 50px 20px;
+            }
+
+            .event-container {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-event {
+                padding: 25px;
+            }
+
+            .featured-content h2 {
+                font-size: 24px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="foto-removebg-preview (2).png" alt="Logo SMK MHI">
+
+            <div class="logo-text">
+                <h2>SMK MHI</h2>
+                <span>Mulia Hati Insani</span>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artikel.html">artikel</a></li>
+            <li><a href="event.html">event</a></li>
+            <li><a href="galeri foto.html">Gallery</a></li>
+            <li><a href="klien kami.html">Klien</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span>
+            <i class='bx bx-calendar-event'></i>
+            EVENT SEKOLAH
+        </span>
+
+        <h1>Event & Kegiatan</h1>
+
+        <p>
+            Temukan berbagai kegiatan menarik, acara sekolah,
+            perlombaan, seminar, dan aktivitas siswa SMK Mulia Hati Insani.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EVENT TERBARU
+========================= -->
+<section class="section">
+
+    <div class="section-title">
+        <span>Agenda Sekolah</span>
+        <h2>Event Terbaru</h2>
+        <p>Berbagai kegiatan yang diselenggarakan oleh SMK Mulia Hati Insani.</p>
+    </div>
+
+
+    <div class="event-container">
+
+        <!-- EVENT 1 -->
+        <div class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="jii.jpg"
+                    alt="Seminar Pendidikan">
+
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">Seminar</span>
+
+                <h3>Seminar Pendidikan & Teknologi</h3>
+
+                <p>
+                    Seminar untuk meningkatkan wawasan siswa
+                    mengenai perkembangan teknologi dan dunia kerja.
+                </p>
+
+                <div class="event-info">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        08.00 - 12.00 WIB
+                    </div>
+
+                    <div>
+                        <i class='bx bx-map'></i>
+                        Aula SMK MHI
+                    </div>
+                </div>
+
+                <a href="#" class="detail-btn">
+                    Lihat Detail
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 2 -->
+        <div class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="pol.jpg"
+                    alt="Class Meeting">
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">Olahraga</span>
+
+                <h3>Class Meeting SMK MHI</h3>
+
+                <p>
+                    Kegiatan class meeting untuk mempererat
+                    kebersamaan dan sportivitas antar siswa.
+                </p>
+
+                <div class="event-info">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        07.30 - 15.00 WIB
+                    </div>
+
+                    <div>
+                        <i class='bx bx-map'></i>
+                        Lapangan Sekolah
+                    </div>
+                </div>
+
+                <a href="#" class="detail-btn">
+                    Lihat Detail
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 3 -->
+        <div class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="ror.webp"
+                    alt="Festival Sekolah">
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">Festival</span>
+
+                <h3>Festival Kreativitas Siswa</h3>
+
+                <p>
+                    Ajang kreativitas siswa melalui seni, musik,
+                    desain, teknologi, dan berbagai karya lainnya.
+                </p>
+
+                <div class="event-info">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        08.00 - 16.00 WIB
+                    </div>
+
+                    <div>
+                        <i class='bx bx-map'></i>
+                        Gedung Serbaguna
+                    </div>
+                </div>
+
+                <a href="#" class="detail-btn">
+                    Lihat Detail
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 4 -->
+        <div class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="aa.jpg"
+                    alt="Bakti Sosial">
+
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">Sosial</span>
+
+                <h3>Bakti Sosial</h3>
+
+                <p>
+                    Kegiatan sosial sebagai bentuk kepedulian
+                    siswa terhadap masyarakat sekitar sekolah.
+                </p>
+
+                <div class="event-info">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        08.00 - 13.00 WIB
+                    </div>
+
+                    <div>
+                        <i class='bx bx-map'></i>
+                        Lingkungan Sekitar
+                    </div>
+                </div>
+
+                <a href="#" class="detail-btn">
+                    Lihat Detail
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 5 -->
+        <div class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="b.jpg"
+                    alt="perlombaan">
+
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">perlombaan</span>
+
+                <h3>perlombaan</h3>
+
+                <p>
+                     kegiatan adu kemampuan, keterampilan, kecepatan, atau ketangkasan antar siswa atau antar kelas dalam lingkungan pendidikan.
+                </p>
+
+                <div class="event-info">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        09.00 - 14.00 WIB
+                    </div>
+
+                    <div>
+                        <i class='bx bx-map'></i>
+                        lapangan futsal
+                    </div>
+                </div>
+
+                <a href="#" class="detail-btn">
+                    Lihat Detail
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 6 -->
+        <div class="event-card">
+
+            <div class="event-image">
+
+                <img
+                    src="lo.jpg"
+                    alt="Pentas Seni">
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">Seni</span>
+
+                <h3>Pentas Seni Sekolah</h3>
+
+                <p>
+                    Penampilan seni dan budaya dari siswa
+                    SMK Mulia Hati Insani.
+                </p>
+
+                <div class="event-info">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        08.00 - 15.00 WIB
+                    </div>
+
+                    <div>
+                        <i class='bx bx-map'></i>
+                        Aula SMK MHI
+                    </div>
+                </div>
+
+                <a href="#" class="detail-btn">
+                    Lihat Detail
+                    <i class='bx bx-right-arrow-alt'></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+ 
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+
+            <h2>SMK MULIA HATI INSANI</h2>
+
+            <p>
+                Membangun generasi unggul, berkarakter,
+                kompeten, kreatif, dan siap menghadapi dunia kerja.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Menu</h3>
+
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="visi-misi.html">Visi & Misi</a>
+            <a href="jurusan.html">Jurusan</a>
+            <a href="event.html">Event</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Kontak</h3>
+
+            <p>
+                <i class='bx bx-map'></i>
+                Jl. Raya Pandeglang KM.07,
+                Warunggunung, Kabupaten Lebak
+            </p>
+
+            <p>
+                <i class='bx bx-envelope'></i>
+                info@smkmhi.sch.id
+            </p>
+
+            <p>
+                <i class='bx bx-phone'></i>
+                +62 812-3456-7890
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 SMK Mulia Hati Insani. Semua Hak Dilindungi.
+    </div>
+
+</footer>
+
+</body>
+</html>
+

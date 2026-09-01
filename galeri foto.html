@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri Sekolah</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #174ea6;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(
+                rgba(23, 78, 166, 0.8),
+                rgba(23, 78, 166, 0.8)
+            ),
+            url("img/sekolah.jpg") center/cover;
+
+            height: 350px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 18px;
+        }
+
+        /* GALERI */
+        .gallery-section {
+            padding: 60px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul h2 {
+            color: #174ea6;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .judul p {
+            color: #666;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .caption h3 {
+            color: #174ea6;
+            margin-bottom: 7px;
+        }
+
+        .caption p {
+            color: #777;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #174ea6;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header h1 {
+                font-size: 35px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1000px) {
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo">
+            SMK MHI
+        </div>
+
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="artikel.html">Artikel</a>
+            </li>
+
+            <li>
+                <a href="event.html">Event</a>
+            </li>
+
+            <li>
+                <a href="galeri foto.html">Galeri</a>
+            </li>
+
+            <li>
+                <a href="klien kami.html">Klien Kami</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HEADER -->
+    <section class="header">
+
+        <div>
+
+            <h1>Galeri Sekolah</h1>
+
+            <p>
+                Dokumentasi kegiatan dan aktivitas
+                SMK MHI
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALERI -->
+    <section class="gallery-section">
+
+        <div class="judul">
+
+            <h2>Foto Kegiatan Sekolah</h2>
+
+            <p>
+                Kumpulan dokumentasi kegiatan siswa
+                dan sekolah.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <!-- FOTO 1 -->
+            <div class="gallery-item">
+
+                <img
+                    src="a.jpg"
+                    alt="Upacara Sekolah"
+                >
+
+                <div class="caption">
+
+                    <h3>Upacara Sekolah</h3>
+
+                    <p>
+                        Kegiatan upacara bendera
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 2 -->
+            <div class="gallery-item">
+
+                <img
+                    src="r.jpg"
+                    alt="Kegiatan Belajar"
+                >
+
+                <div class="caption">
+
+                    <h3>Kegiatan Belajar</h3>
+
+                    <p>
+                        Aktivitas belajar siswa
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 3 -->
+            <div class="gallery-item">
+
+                <img
+                    src="senam.jpg"
+                    alt="Olahraga"
+                >
+
+                <div class="caption">
+
+                    <h3>Olahraga</h3>
+
+                    <p>
+                        Kegiatan olahraga siswa
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 4 -->
+            <div class="gallery-item">
+
+                <img
+                    src="pr.jpg"
+                    alt="Pramuka"
+                >
+
+                <div class="caption">
+
+                    <h3>Pramuka</h3>
+
+                    <p>
+                        Kegiatan ekstrakurikuler
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 5 -->
+            <div class="gallery-item">
+
+                <img
+                    src="ror.webp"
+                    alt="Lomba Sekolah"
+                >
+
+                <div class="caption">
+
+                    <h3>Lomba Sekolah</h3>
+
+                    <p>
+                        Perlombaan antar siswa
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO 6 -->
+            <div class="gallery-item">
+
+                <img
+                    src="jr.jpg"
+                    alt="Acara Perpisahan"
+                >
+
+                <div class="caption">
+
+                    <h3>Perpisahan</h3>
+
+                    <p>
+                        Acara perpisahan sekolah
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            ©️ 2026 SMK MHI | Galeri Sekolah
+        </p>
+
+    </footer>
+
+</body>
+</html>

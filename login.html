@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SMK Mulia Hati Insani</title>
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0d6efd, #6f42c1);
+        }
+
+        .login-container {
+            width: 400px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .logo h2 {
+            color: #0d6efd;
+            font-size: 24px;
+        }
+
+        .logo p {
+            color: #777;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 14px 45px 14px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0d6efd;
+            font-size: 20px;
+        }
+
+        .remember {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .remember label {
+            color: #555;
+        }
+
+        .remember a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .remember a:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #0d6efd;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #084298;
+            transform: translateY(-2px);
+        }
+
+        .register {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .register a {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-home:hover {
+            color: #0d6efd;
+        }
+
+        @media (max-width: 500px) {
+            .login-container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Logo dan Nama Sekolah -->
+        <div class="logo">
+            <img src="foto-removebg-preview (2).png" alt="Logo SMK MHI">
+            <h2>SMK MULIA HATI INSANI</h2>
+            <p>Silakan login untuk melanjutkan</p>
+        </div>
+
+        <!-- Form Login -->
+        <form action="index.html" method="post">
+
+            <!-- Username -->
+            <div class="input-box">
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required
+                >
+                <i class='bx bx-user'></i>
+            </div>
+
+            <!-- Password -->
+            <div class="input-box">
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                >
+                <i class='bx bx-lock-alt'></i>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="remember">
+                <label>
+                    <input type="checkbox" name="remember">
+                    Ingat saya
+                </label>
+
+                <a href="#">Lupa password?</a>
+            </div>
+
+            <!-- Tombol Login -->
+            <button type="submit" class="login-btn">
+                <i class='bx bx-log-in'></i>
+                Login
+            </button>
+
+        </form>
+
+        <!-- Register -->
+        <div class="register">
+            Belum punya akun?
+            <a href="register.html">Daftar</a>
+        </div>
+
+        <!-- Kembali ke Home -->
+        <a href="index.html" class="back-home">
+            ← Kembali ke Beranda
+        </a>
+
+    </div>
+
+</body>
+</html>

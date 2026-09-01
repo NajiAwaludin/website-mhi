@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile Sekolah | SMK Mulia Hati Insani</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f8fc;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            width: 100%;
+            background: #0d6efd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            font-size: 12px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #ffd43b;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 400px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 65, 140, 0.78),
+                    rgba(0, 25, 70, 0.88)
+                ),
+                url("gambar-sekolah.jpg") center/cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 45px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #0d6efd;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* ================= PROFILE ================= */
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .profile-image img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-text h2 {
+            color: #0d6efd;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .profile-text p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        /* ================= DATA SEKOLAH ================= */
+
+        .data-section {
+            background: white;
+        }
+
+        .data-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .data-box {
+            background: #f5f8fc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #0d6efd;
+            transition: 0.3s;
+        }
+
+        .data-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .data-box i {
+            color: #0d6efd;
+            font-size: 25px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .data-box strong {
+            color: #333;
+        }
+
+        /* ================= KEUNGGULAN ================= */
+
+        .keunggulan-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .keunggulan-card {
+            background: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s;
+        }
+
+        .keunggulan-card:hover {
+            transform: translateY(-8px);
+            background: #0d6efd;
+            color: white;
+        }
+
+        .keunggulan-card i {
+            font-size: 45px;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .keunggulan-card:hover i {
+            color: white;
+        }
+
+        .keunggulan-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .keunggulan-card p {
+            font-size: 13px;
+        }
+
+        /* ================= KEPALA SEKOLAH ================= */
+
+        .kepsek {
+            background: white;
+        }
+
+        .kepsek-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .kepsek-image img {
+            width: 230px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .kepsek-text h2 {
+            color: #0d6efd;
+            margin-bottom: 5px;
+        }
+
+        .kepsek-text h4 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .kepsek-text p {
+            color: #666;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: linear-gradient(135deg, #0d6efd, #063b8c);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #ffd43b;
+            color: #222;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #071b36;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .keunggulan-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-menu {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .data-container,
+            .keunggulan-container {
+                grid-template-columns: 1fr;
+            }
+
+            .kepsek-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img src="foto-removebg-preview (2).png" alt="Logo SMK MHI">
+
+            <div>
+                <h2>SMK MHI</h2>
+                <span>Mulia Hati Insani</span>
+            </div>
+
+        </div>
+
+        <ul class="nav-menu">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="profile.html" class="active">Profile</a>
+            </li>
+
+            <li>
+                <a href="visi dan misi.html">Visi & Misi</a>
+            </li>
+
+            <li>
+                <a href="jurusan smk mhi.html">Jurusan</a>
+            </li>
+
+            <li>
+                <a href="eskul smk mhi.html">Ekstrakurikuler</a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Profile Sekolah</h1>
+
+            <p>
+                Mengenal lebih dekat SMK Mulia Hati Insani,
+                sekolah yang berkomitmen mencetak generasi
+                unggul, berkarakter, kreatif, dan kompeten.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DATA SEKOLAH ================= -->
+
+    <section class="section data-section">
+
+        <div class="section-title">
+
+            <h2>Informasi Sekolah</h2>
+
+            <p>Informasi umum SMK Mulia Hati Insani</p>
+
+        </div>
+
+
+        <div class="data-container">
+
+            <div class="data-box">
+                <i class='bx bx-building'></i>
+                <strong>Nama Sekolah:</strong>
+                SMK Mulia Hati Insani
+            </div>
+
+            <div class="data-box">
+                <i class='bx bx-map'></i>
+                <strong>Alamat:</strong>
+                Jl. Raya Pandeglang KM.07, Warunggunung,
+                Kabupaten Lebak
+            </div>
+
+            <div class="data-box">
+                <i class='bx bx-school'></i>
+                <strong>Jenjang:</strong>
+                Sekolah Menengah Kejuruan
+            </div>
+
+            <div class="data-box">
+                <i class='bx bx-book'></i>
+                <strong>Program Keahlian:</strong>
+                PPLG, TJKT, dan DKV
+            </div>
+
+            <div class="data-box">
+                <i class='bx bx-envelope'></i>
+                <strong>Email:</strong>
+                info@smkmhi.sch.id
+            </div>
+
+            <div class="data-box">
+                <i class='bx bx-globe'></i>
+                <strong>Website:</strong>
+                Website Resmi SMK MHI
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KEUNGGULAN ================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Keunggulan Sekolah</h2>
+
+            <p>
+                Membentuk siswa yang memiliki pengetahuan,
+                keterampilan, dan karakter positif.
+            </p>
+
+        </div>
+
+
+        <div class="keunggulan-container">
+
+            <div class="keunggulan-card">
+
+                <i class='bx bx-book-open'></i>
+
+                <h3>Pendidikan Berkualitas</h3>
+
+                <p>
+                    Memberikan pembelajaran yang mendukung
+                    perkembangan akademik dan keterampilan siswa.
+                </p>
+
+            </div>
+
+
+            <div class="keunggulan-card">
+
+                <i class='bx bx-laptop'></i>
+
+                <h3>Berbasis Teknologi</h3>
+
+                <p>
+                    Mendorong siswa untuk memahami dan
+                    memanfaatkan perkembangan teknologi.
+                </p>
+
+            </div>
+
+
+            <div class="keunggulan-card">
+
+                <i class='bx bx-briefcase'></i>
+
+                <h3>Siap Dunia Kerja</h3>
+
+                <p>
+                    Membekali siswa dengan keterampilan
+                    yang sesuai dengan kebutuhan dunia kerja.
+                </p>
+
+            </div>
+
+
+            <div class="keunggulan-card">
+
+                <i class='bx bx-group'></i>
+
+                <h3>Berkarakter</h3>
+
+                <p>
+                    Membentuk siswa yang disiplin, bertanggung
+                    jawab, mandiri, dan memiliki sikap positif.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+            
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            <strong>SMK MULIA HATI INSANI</strong>
+        </p>
+
+        <p>
+            Jl. Raya Pandeglang KM.07, Warunggunung,
+            Kabupaten Lebak
+        </p>
+
+        <p>
+            Email: info@smkmhi.sch.id
+        </p>
+
+        <p>
+            © 2026 SMK Mulia Hati Insani. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

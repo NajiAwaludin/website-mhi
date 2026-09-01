@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jurusan | SMK Mulia Hati Insani</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f8fc;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            background: #0d6efd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu .active {
+            color: #ffd43b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 400px;
+            background:
+                linear-gradient(rgba(0, 60, 130, 0.75), rgba(0, 30, 80, 0.85)),
+                url("gambar-sekolah.jpg") center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 45px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #0d6efd;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* JURUSAN */
+        .jurusan-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .jurusan-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+        }
+
+        .jurusan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+        }
+
+        .jurusan-icon {
+            height: 170px;
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .jurusan-icon i {
+            font-size: 80px;
+        }
+
+        .jurusan-content {
+            padding: 25px;
+        }
+
+        .jurusan-content h3 {
+            color: #0d6efd;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .jurusan-content h4 {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .jurusan-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .jurusan-content ul {
+            list-style: none;
+        }
+
+        .jurusan-content ul li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .jurusan-content ul li i {
+            color: #0d6efd;
+            margin-right: 7px;
+        }
+
+        /* KEUNGGULAN */
+        .keunggulan {
+            background: white;
+        }
+
+        .keunggulan-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .keunggulan-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            background: #f5f8fc;
+            transition: 0.3s;
+        }
+
+        .keunggulan-box:hover {
+            background: #0d6efd;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .keunggulan-box i {
+            font-size: 45px;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .keunggulan-box:hover i {
+            color: white;
+        }
+
+        .keunggulan-box h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .keunggulan-box p {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0d6efd, #063b8c);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: auto auto 25px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd43b;
+            color: #222;
+            padding: 13px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #071b36;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #ccc;
+            margin: 5px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .jurusan-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .keunggulan-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-menu {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .jurusan-container,
+            .keunggulan-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="foto-removebg-preview (2).png" alt="Logo SMK MHI">
+
+            <div>
+                <h2>SMK MHI</h2>
+                <span>Mulia Hati Insani</span>
+            </div>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="visi dan misi.html">Visi & Misi</a></li>
+            <li><a href="jurusan smk mhi.html" class="active">Jurusan</a></li>
+            <li><a href="eskul smk mhi.html">Ekstrakurikuler</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Program Keahlian</h1>
+
+            <p>
+                SMK Mulia Hati Insani menyediakan program keahlian
+                yang dirancang untuk membekali siswa dengan ilmu,
+                keterampilan, kreativitas, dan kompetensi yang sesuai
+                dengan perkembangan dunia kerja dan teknologi.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JURUSAN -->
+    <section class="section">
+
+        <div class="section-title">
+            <h2>Jurusan di SMK MHI</h2>
+
+            <p>
+                Pilih jurusan sesuai minat, bakat, dan cita-cita kamu.
+            </p>
+        </div>
+
+
+        <div class="jurusan-container">
+
+
+            <!-- PPLG -->
+            <div class="jurusan-card">
+
+                <div class="jurusan-icon">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+
+                <div class="jurusan-content">
+
+                    <h3>PPLG</h3>
+
+                    <h4>
+                        Pengembangan Perangkat Lunak dan Gim
+                    </h4>
+
+                    <p>
+                        Jurusan PPLG mempelajari pembuatan perangkat
+                        lunak, website, aplikasi, serta pengembangan gim
+                        dengan memanfaatkan teknologi modern.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Pemrograman
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Pengembangan Website
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Pengembangan Aplikasi
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Database
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Pengembangan Gim
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- TJKT -->
+            <div class="jurusan-card">
+
+                <div class="jurusan-icon">
+                    <i class='bx bx-network-chart'></i>
+                </div>
+
+                <div class="jurusan-content">
+
+                    <h3>TJKT</h3>
+
+                    <h4>
+                        Teknik Jaringan Komputer dan Telekomunikasi
+                    </h4>
+
+                    <p>
+                        Jurusan TJKT mempelajari jaringan komputer,
+                        perangkat keras, server, keamanan jaringan,
+                        serta teknologi telekomunikasi.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Jaringan Komputer
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Instalasi Jaringan
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Konfigurasi Router
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Administrasi Server
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Keamanan Jaringan
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- DKV -->
+            <div class="jurusan-card">
+
+                <div class="jurusan-icon">
+                    <i class='bx bx-palette'></i>
+                </div>
+
+                <div class="jurusan-content">
+
+                    <h3>DKV</h3>
+
+                    <h4>
+                        Desain Komunikasi Visual
+                    </h4>
+
+                    <p>
+                        Jurusan DKV mempelajari seni dan desain untuk
+                        menyampaikan pesan secara visual melalui
+                        gambar, ilustrasi, fotografi, dan media digital.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Desain Grafis
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Fotografi
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Ilustrasi
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Branding
+                        </li>
+
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Desain Media Digital
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+    <section class="section keunggulan">
+
+        <div class="section-title">
+
+            <h2>Keunggulan Program Keahlian</h2>
+
+            <p>
+                Pembelajaran yang mendukung perkembangan kompetensi siswa.
+            </p>
+
+        </div>
+
+
+        <div class="keunggulan-container">
+
+            <div class="keunggulan-box">
+
+                <i class='bx bx-book-open'></i>
+
+                <h3>Pembelajaran Berkualitas</h3>
+
+                <p>
+                    Materi pembelajaran disesuaikan dengan kebutuhan
+                    kompetensi siswa.
+                </p>
+
+            </div>
+
+
+            <div class="keunggulan-box">
+
+                <i class='bx bx-laptop'></i>
+
+                <h3>Berbasis Teknologi</h3>
+
+                <p>
+                    Siswa mengenal dan menggunakan teknologi dalam
+                    proses pembelajaran.
+                </p>
+
+            </div>
+
+
+            <div class="keunggulan-box">
+
+                <i class='bx bx-briefcase'></i>
+
+                <h3>Siap Dunia Kerja</h3>
+
+                <p>
+                    Membekali siswa dengan keterampilan yang berguna
+                    untuk dunia kerja.
+                </p>
+
+            </div>
+
+
+            <div class="keunggulan-box">
+
+                <i class='bx bx-bulb'></i>
+
+                <h3>Kreatif & Inovatif</h3>
+
+                <p>
+                    Mendorong siswa untuk menghasilkan karya dan
+                    solusi yang kreatif.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            <strong>SMK MULIA HATI INSANI</strong>
+        </p>
+
+        <p>
+            Jl. Raya Pandeglang KM.07, Warunggunung,
+            Kabupaten Lebak
+        </p>
+
+        <p>
+            Email: info@smkmhi.sch.id
+        </p>
+
+        <p>
+            © 2026 SMK Mulia Hati Insani. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

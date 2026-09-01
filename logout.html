@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout | SMK Mulia Hati Insani</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0d6efd, #6f42c1);
+        }
+
+        .logout-box {
+            width: 400px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .logout-box .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .logout-box h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .logout-box p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-login {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background: #084298;
+        }
+
+        .btn-home {
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .btn-home:hover {
+            background: #ced4da;
+        }
+
+        @media (max-width: 500px) {
+            .logout-box {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logout-box">
+        <div class="icon">👋</div>
+
+        <h1>Berhasil Logout</h1>
+
+        <p>
+            Kamu telah keluar dari akun.
+            Terima kasih telah mengunjungi Website SMK Mulia Hati Insani.
+        </p>
+
+        <a href="login.html" class="btn btn-login">
+            Login Kembali
+        </a>
+
+        <a href="index.html" class="btn btn-home">
+            Ke Beranda
+        </a>
+    </div>
+
+</body>
+</html>
+

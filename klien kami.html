@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Klien Kami | SMK Mulia Hati Insani</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
+
+
+    <!-- ================= CSS ================= -->
+    <style>
+
+        /* ================= RESET ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #222;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            min-height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #111;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo-text h2 {
+            font-size: 19px;
+            color: #0d6efd;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 11px;
+            color: #777;
+        }
+
+
+        /* ================= MENU ================= */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu a {
+            padding: 10px 14px;
+
+            color: #333;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: white;
+            background: #0d6efd;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .client-hero {
+            min-height: 430px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+                url("sekolah.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content span {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin: 15px 0;
+        }
+
+        .hero-content p {
+            max-width: 700px;
+
+            margin: auto;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            padding: 85px 20px 45px;
+        }
+
+        .section-title {
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .section-title span {
+            color: #0d6efd;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+
+            margin: 10px 0 15px;
+        }
+
+        .section-title p {
+            color: #777;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= CLIENT ================= */
+
+        .clients {
+            padding: 45px 20px 90px;
+
+            background: #f7f9fc;
+        }
+
+        .client-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .client-card {
+            padding: 35px 30px;
+
+            text-align: center;
+
+            background: white;
+
+            border: 1px solid #eee;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.06);
+
+            transition: 0.35s;
+        }
+
+        .client-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .client-logo {
+            width: 80px;
+            height: 80px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf3ff;
+
+            color: #0d6efd;
+
+            border-radius: 50%;
+        }
+
+        .client-logo i {
+            font-size: 38px;
+        }
+
+        .client-card h3 {
+            font-size: 19px;
+
+            margin-bottom: 12px;
+        }
+
+        .client-card p {
+            color: #777;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 7px 15px;
+
+            color: #0d6efd;
+
+            background: #edf4ff;
+
+            border-radius: 50px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        /* ================= STATISTICS ================= */
+
+        .statistics {
+            padding: 70px 20px;
+
+            background: #0d6efd;
+
+            color: white;
+        }
+
+        .statistics-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 42px;
+
+            margin-bottom: 12px;
+        }
+
+        .stat-item h2 {
+            font-size: 38px;
+
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+
+            opacity: 0.9;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 90px 20px;
+
+            text-align: center;
+
+            background: white;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #777;
+
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 30px;
+
+            padding: 14px 28px;
+
+            color: white;
+
+            background: #0d6efd;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #084298;
+
+            transform: translateY(-3px);
+        }
+
+        .btn i {
+            font-size: 20px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            background: #101828;
+
+            color: white;
+        }
+
+        .footer-content {
+            padding: 60px 0;
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr;
+
+            gap: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 55px;
+            height: 55px;
+
+            object-fit: contain;
+        }
+
+        .footer-logo h3 {
+            font-size: 16px;
+        }
+
+        .footer-logo p {
+            color: #aaa;
+
+            font-size: 11px;
+        }
+
+        .footer-box > p {
+            color: #aaa;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-box p {
+            color: #aaa;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 12px;
+        }
+
+        .footer-box p i {
+            color: #0d6efd;
+
+            font-size: 18px;
+
+            margin-right: 7px;
+
+            vertical-align: middle;
+        }
+
+        .footer-bottom {
+            padding: 20px;
+
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: #888;
+
+            font-size: 12px;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 992px) {
+
+            .client-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .statistics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                flex-direction: column;
+
+                padding: 15px 0;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                margin-top: 10px;
+            }
+
+            .nav-menu a {
+                font-size: 12px;
+
+                padding: 8px 10px;
+            }
+
+            .client-hero {
+                min-height: 380px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .client-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statistics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+        }
+
+
+        /* ================= SMALL MOBILE ================= */
+
+        @media (max-width: 480px) {
+
+            .logo-text h2 {
+                font-size: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-content span {
+                font-size: 11px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .statistics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+
+                <img src="foto-removebg-preview (2).png" alt="Logo SMK MHI">
+
+                <div class="logo-text">
+
+                    <h2>SMK MHI</h2>
+
+                    <span>Mulia Hati Insani</span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="artikel.html">
+                    artikel
+                </a>
+
+                <a href="galeri foto.html">
+                    galeri foto
+                </a>
+
+                <a href="klien.html" class="active">
+                    Klien Kami
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="client-hero">
+
+        <div class="container hero-content">
+
+            <span>
+                MITRA SEKOLAH
+            </span>
+
+            <h1>
+                Klien & Mitra Kami
+            </h1>
+
+            <p>
+                Bersama membangun pendidikan yang berkualitas
+                melalui kerja sama dengan dunia usaha dan dunia industri.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="intro">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    KERJA SAMA
+                </span>
+
+                <h2>
+                    Partner Kami
+                </h2>
+
+                <p>
+                    SMK Mulia Hati Insani menjalin kerja sama dengan
+                    berbagai perusahaan dan instansi untuk memberikan
+                    pengalaman serta meningkatkan kompetensi siswa.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KLIEN ================= -->
+
+    <section class="clients">
+
+        <div class="container">
+
+            <div class="client-grid">
+
+
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <i class='bx bx-buildings'></i>
+                    </div>
+
+                    <h3>
+                        PT Maju Bersama
+                    </h3>
+
+                    <p>
+                        Mitra dalam kegiatan praktik kerja lapangan
+                        dan pengembangan kompetensi siswa.
+                    </p>
+
+                    <span class="badge">
+                        Dunia Industri
+                    </span>
+
+                </div>
+
+
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+
+                    <h3>
+                        Digital Kreatif Indonesia
+                    </h3>
+
+                    <p>
+                        Mitra dalam bidang teknologi informasi,
+                        pemrograman dan pengembangan aplikasi.
+                    </p>
+
+                    <span class="badge">
+                        Teknologi
+                    </span>
+
+                </div>
+
+
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <i class='bx bx-network-chart'></i>
+                    </div>
+
+                    <h3>
+                        Tech Network Indonesia
+                    </h3>
+
+                    <p>
+                        Partner dalam pengembangan kompetensi
+                        jaringan komputer dan telekomunikasi.
+                    </p>
+
+                    <span class="badge">
+                        Jaringan
+                    </span>
+
+                </div>
+
+
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <i class='bx bx-palette'></i>
+                    </div>
+
+                    <h3>
+                        Kreatif Visual Studio
+                    </h3>
+
+                    <p>
+                        Mitra dalam bidang desain grafis,
+                        fotografi dan komunikasi visual.
+                    </p>
+
+                    <span class="badge">
+                        Desain
+                    </span>
+
+                </div>
+
+
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <i class='bx bx-store'></i>
+                    </div>
+
+                    <h3>
+                        CV Berkah Mandiri
+                    </h3>
+
+                    <p>
+                        Partner dalam kegiatan kewirausahaan
+                        dan pengembangan pengalaman kerja siswa.
+                    </p>
+
+                    <span class="badge">
+                        Kewirausahaan
+                    </span>
+
+                </div>
+
+
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <i class='bx bx-briefcase'></i>
+                    </div>
+
+                    <h3>
+                        Industri Nusantara
+                    </h3>
+
+                    <p>
+                        Mitra dalam kegiatan pendidikan,
+                        pelatihan dan pengembangan siswa.
+                    </p>
+
+                    <span class="badge">
+                        Dunia Kerja
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATISTIK ================= -->
+
+    <section class="statistics">
+
+        <div class="container statistics-grid">
+
+
+            <div class="stat-item">
+
+                <i class='bx bx-buildings'></i>
+
+                <h2>
+                    20+
+                </h2>
+
+                <p>
+                    Mitra Industri
+                </p>
+
+            </div>
+
+
+            <div class="stat-item">
+
+                <i class='bx bx-group'></i>
+
+                <h2>
+                    500+
+                </h2>
+
+                <p>
+                    Siswa Magang
+                </p>
+
+            </div>
+
+
+            <div class="stat-item">
+
+                <i class='bx bx-briefcase'></i>
+
+                <h2>
+                    15+
+                </h2>
+
+                <p>
+                    Program Kerja Sama
+                </p>
+
+            </div>
+
+
+            <div class="stat-item">
+
+                <i class='bx bx-award'></i>
+
+                <h2>
+                    50+
+                </h2>
+
+                <p>
+                    Kegiatan Industri
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Ingin Menjadi Mitra Kami?
+            </h2>
+
+            <p>
+                Mari bersama SMK Mulia Hati Insani dalam
+                menciptakan generasi yang kompeten dan siap kerja.
+            </p>
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+
+            <div class="footer-box">
+
+                <div class="footer-logo">
+
+                    <img src="foto-removebg-preview (2).png" alt="Logo SMK MHI">
+
+                    <div>
+
+                        <h3>
+                            SMK MULIA HATI INSANI
+                        </h3>
+
+                        <p>
+                            Sekolah Unggul dan Berkarakter
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Membangun generasi unggul, berkarakter,
+                    kompeten, kreatif dan siap menghadapi dunia kerja.
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>
+                    Alamat
+                </h3>
+
+                <p>
+
+                    <i class='bx bx-map'></i>
+
+                    Jl. Raya Pandeglang KM.07,
+                    Warunggunung, Kabupaten Lebak
+
+                </p>
+
+                <p>
+
+                    <i class='bx bx-envelope'></i>
+
+                    info@smkmhi.sch.id
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 SMK Mulia Hati Insani.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
